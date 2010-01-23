@@ -1,0 +1,13 @@
+ul.horizontal, ol.horizontal, .horizontal li {
+  display: inline;
+}
+
+.error {
+  border: 1px solid red;
+  color: red;
+}
+
+.message {
+  border: 1px solid green;
+  color: green;
+}

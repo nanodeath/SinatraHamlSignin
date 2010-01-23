@@ -1,0 +1,12 @@
+%h1 Login page
+
+%form{:action => "/login", :method => "post"}
+  %legend Login here
+  %p
+    %label{:for => "username"}
+    %input{:type => "text", :name => "username", :id => "username"}
+  %p
+    %label{:for => "password"}
+    %input{:type => "password", :name => "password", :id => "password"}
+  %p
+    %input{:type => "submit"}

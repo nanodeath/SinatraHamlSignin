@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Sign In Application
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/main.css"}
+  %body
+    %ul.horizontal
+      %li
+        %a{:href => "/"} Home
+      %li
+        %a{:href => "/about"} About
+      %li
+        - if !is_logged_in?
+          %a{:href => "/login"} Log In
+        - else
+          %a{:href => "/logout"} Log Out
+      = yield
