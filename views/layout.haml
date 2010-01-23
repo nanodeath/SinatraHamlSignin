@@ -14,4 +14,9 @@
           %a{:href => "/login"} Log In
         - else
           %a{:href => "/logout"} Log Out
+      - if !@error_message.nil?
+        .error== There was an error: #{@error_message}
+      - if !@message.nil?
+        .message== Message: #{@message}
+      %p== You are: #{the_user_name}
       = yield
