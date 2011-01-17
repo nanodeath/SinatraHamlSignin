@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'bundler/setup'
 require 'sinatra'
 require 'haml'
 
@@ -44,10 +45,13 @@ post '/login' do
     puts "yay"
     session["logged_in"] = true
     session["username"] = params["username"]
+    # NOTE the right way to do messages like this is to use Rack::Flash
+    # https://github.com/nakajima/rack-flash
     @message = "You've been logged in.  Welcome back, #{params["username"]}"
     haml :index
   else
     puts "error"
+    # See note above
     @error_message = "Sorry, those credentials aren't valid."
     haml :login
   end
